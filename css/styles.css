@@ -203,13 +203,8 @@ header img {
   background-color: #e2e2e2;
 }
 
-#v06 .img-container {
-  width: 80%;
-  margin: auto;
-}
-
-#v06 .img-container img {
-  width: 100%;
+#v06 video {
+  width: 270px;
 }
 
 #v06 .plan-type {

@@ -195,13 +195,10 @@ header img {
 
 #v06 {
     background-color: $color_gray;
-    .img-container {
-        width: 80%;
-        margin: auto;
-        img {
-            width: 100%;
-        }
+    video {
+        width: 270px;
     }
+
     .plan-type {
         color: #fff;
         background-color: $color_pink;
