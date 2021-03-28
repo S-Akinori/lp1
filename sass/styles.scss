@@ -1,0 +1,307 @@
+$color_red: rgb(165, 52, 24);
+$color_pink: rgb(150, 100, 105);
+$color_gray: rgb(226, 226, 226);
+
+/* common settings */
+body {
+    font-family: "源ノ角ゴシック", "游ゴシック", 'ヒラギノ角ゴ ProN', "メイリオ", "MS Pゴシック", sans-serif;
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+}
+h2 {
+    font-size: 2rem;
+}
+h3 {
+    font-size: 1.2rem;
+}
+.section img {
+    // width: 100%;
+}
+
+p {
+    margin: 0;
+}
+
+.vh2 {
+    border-left: 0.4rem solid $color_red;
+    padding-left: 1rem;
+}
+
+.section {
+    padding: 3rem 0;
+    > div {
+        max-width: 900px;
+        margin: auto;
+    }
+}
+
+.red {
+    color: $color_red;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+}
+
+.text-lg {
+    font-size: 1.125rem;
+}
+
+.text-xl {
+    font-size: 1.25rem;
+}
+
+.text-2xl {
+    font-size: 1.5rem;
+}
+.text-3xl {
+    font-size: 1.875rem;
+}
+.text-4xl {
+    font-size: 2.25rem;
+}
+.text-5xl {
+    font-size: 3rem;
+}
+
+.z-1 {
+    z-index: 9999;
+}
+
+.divider {
+    border: 0.1rem solid $color_gray;
+}
+
+.d-sp {
+    display: none;
+}
+
+@media screen and (max-width:767px){
+    .d-pc {
+        display: none !important;
+    }
+
+    .d-sp {
+        display: block !important;
+    }
+
+    .section {
+        > div {
+            max-width: 350px;
+            margin: auto;
+        }
+    }
+}
+
+/* ここまで */
+
+/* header */
+header img {
+    /* width: 100%; */
+}
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    transition: .3s;
+    height: 60px;
+    background-color: #fff;
+    box-shadow: 2px 2px 4px;
+    animation-duration: 1s;
+    transform: translateY(-20px);
+    opacity: 0;
+}
+.fixed-header .pc0 {
+    /* width: 80%; */
+    height: 40px;
+}
+.fixed-header .pc1,
+.fixed-header .pc2 {
+    /* width: 80%; */
+    height: 55px;
+}
+.is-show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+@media screen and (max-width:767px){
+    header img {
+        width: 50%;
+        max-height: 55px;
+        max-width: 235px;
+    }
+    header a img {
+        width: 100%;
+    }
+    .fixed-header {
+        height: 40px;
+    }
+    .fixed-header img {
+        max-height: 40px;
+        max-width: 200px;
+    }
+    
+    .sp-header-top {
+        background-color: rgb(205, 206, 206);
+    }
+    .fixed-header img {
+        width: 50%;
+        /* height: 45px; */
+        /* margin: 0 auto; */
+    }
+    .fixed-header a img {
+        width: 100%;
+    }
+    .fixed-header .sp-header-top {
+        display: none !important;
+    }
+}
+
+
+/* header - end */
+
+.v01 {
+    background-color: $color_red;
+    color: #fff;
+    position: relative;
+    padding: 88px 0;
+    .img-container {
+        position: absolute;
+        bottom: 0;
+        right: 150px;
+        img {
+            width: 85%;
+        }
+        @media screen and (max-width:767px){
+            position: static;
+        }
+    }
+    @media screen and (max-width:767px){
+        padding: 25px 0;
+    }
+
+}
+
+#v03 {
+    background-color: $color_gray;
+}
+
+
+#v06 {
+    background-color: $color_gray;
+    .img-container {
+        width: 80%;
+        margin: auto;
+        img {
+            width: 100%;
+        }
+    }
+    .plan-type {
+        color: #fff;
+        background-color: $color_pink;
+        display: inline;
+        padding: 0.2rem 0.5rem;
+        border-radius: 1rem;
+    }
+}
+
+#v07 {
+    $img-container-width: 195px;
+    $img-container-width-sp: 100px;
+    $img-container-height: $img-container-width;
+    $img-container-height-sp: $img-container-width-sp * 1.5;
+    .content .img-container > div {
+        background-color: $color_red;
+        width: 100%;
+        height: $img-container-height;
+        text-align: center;
+        @media screen and (max-width:767px){
+            width: $img-container-width-sp;
+            height: $img-container-height-sp;
+            img {
+                width: 70px;
+                height: 70px;
+            }
+        }
+    }
+    .content div:not(:last-child) .img-container > div {
+        &:after {
+            content: '';
+            border-left: $img-container-width / 4 solid $color_red;
+            border-top: $img-container-height / 2 solid transparent;
+            border-bottom: $img-container-height / 2 solid transparent;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            margin-left: $img-container-width / 2;
+            @media screen and (max-width:767px){
+                margin-left: 0;
+                border-top: $img-container-height-sp / 4 solid $color_red;
+                border-right: $img-container-width-sp / 2 solid transparent;
+                border-left: $img-container-width-sp / 2 solid transparent;
+                left: 23.5px;
+                top: 50%;
+                margin-top: $img-container-height-sp / 2;
+            }
+        }
+    }
+
+}
+
+.contact {
+    background-color: $color_gray;
+    position: relative;
+    .scroll-top-button {
+        position: absolute;
+        right: 200px;
+        bottom: 45px;
+        width: 50px;
+        height: 50px;
+        background-color: #fff;
+        border-radius: 50%;
+        text-align: center;
+        .triangle-up {
+            width: 0;
+            height: 0;
+            border: 15px solid $color_red;
+            border-top: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-left: 10px solid transparent;
+            margin: auto;
+        }
+        &:hover {
+            cursor: pointer;
+            opacity: 0.8;
+        }
+        @media screen and (max-width:767px){
+            position: relative;
+            left: 150px;
+            top: 20px;
+        }
+    }
+
+}
+
+.btn-red {
+    background-color: $color_red;
+    text-decoration: none;
+    color: #fff;
+    padding: 0.5rem 3rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    &:hover {
+        color: #fff;
+        text-decoration: none;
+        opacity: 0.8;
+    }
+    @media screen and (max-width:767px){
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+}
